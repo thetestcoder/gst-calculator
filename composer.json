@@ -1,18 +1,23 @@
 {
-    "name": "thetestcoder/gst-calculator",
-    "description": "this is simple gst calculator",
-    "autoload": {
-        "psr-4": {
-            "Thetestcoder\\GstCalculator\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "The Test Coder",
-            "email": "thetestcoder@gmail.com"
-        }
-    ],
-    "require-dev": {
-        "phpunit/phpunit": "^10.2"
+  "name": "thetestcoder/gst-calculator",
+  "description": "this is simple gst calculator",
+  "autoload": {
+    "psr-4": {
+      "Thetestcoder\\": "src/"
     }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "The Test Coder",
+      "email": "thetestcoder@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^10.2"
+  }
 }
