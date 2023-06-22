@@ -12,10 +12,10 @@ final class GstCalculatorTest extends TestCase
         // arrange the data
         $percentage = 18;
         $amount = 100;
-        $gstCalculator = new GstCalculator();
+        $gstCalculator = new GstCalculator($percentage);
 
         // act on data
-        $gst_amount = $gstCalculator->calculate($amount, $percentage);
+        $gst_amount = $gstCalculator->calculate($amount);
 
         // assert the response
         $this->assertSame(18.0, $gst_amount);
@@ -26,10 +26,10 @@ final class GstCalculatorTest extends TestCase
         // arrange the data
         $percentage = 18;
         $amount = 200;
-        $gstCalculator = new GstCalculator();
+        $gstCalculator = new GstCalculator($percentage);
 
         // act on data
-        $gst_amount = $gstCalculator->calculate($amount, $percentage);
+        $gst_amount = $gstCalculator->calculate($amount);
 
         // assert the response
         $this->assertSame(36.0, $gst_amount);
@@ -43,10 +43,10 @@ final class GstCalculatorTest extends TestCase
         // arrange the data
         $percentage = 101;
         $amount = 200;
-        $gstCalculator = new GstCalculator();
+        $gstCalculator = new GstCalculator($percentage);
 
         // act on data
-        $gst_amount = $gstCalculator->calculate($amount, $percentage);
+        $gst_amount = $gstCalculator->calculate($amount);
     }
 
     public function test_percentage_and_amount_should_be_unsigned()
@@ -57,10 +57,10 @@ final class GstCalculatorTest extends TestCase
         // arrange the data
         $percentage = -101;
         $amount = -200;
-        $gstCalculator = new GstCalculator();
+        $gstCalculator = new GstCalculator($percentage);
 
         // act on data
-        $gst_amount = $gstCalculator->calculate($amount, $percentage);
+        $gst_amount = $gstCalculator->calculate($amount);
     }
 
 

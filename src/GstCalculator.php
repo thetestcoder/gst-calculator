@@ -6,16 +6,33 @@ use InvalidArgumentException;
 
 class GstCalculator
 {
-    public function calculate(float $amount, float $percentage): float
+    private float $percentage;
+
+    public function __construct(float $percentage)
     {
-        if ($percentage > 100) {
-            throw new InvalidArgumentException("Percentage should not be greater than 100");
+        $this->percentage = $percentage;
+    }
+
+    public function calculate(float $amount): float
+    {
+        if (!$this->isPercentageValid()) {
+            throw new InvalidArgumentException("Percentage should be in range of 0 to 100");
         }
 
-        if ($amount < 0 || $percentage < 0) {
-            throw new InvalidArgumentException("Amount and percentage should not be negative");
+        if (!$this->isAmountValid($amount)) {
+            throw new InvalidArgumentException("Amount should not be negative");
         }
 
-        return $amount * ($percentage / 100);
+        return $amount * ($this->percentage / 100);
+    }
+
+    private function isAmountValid($amount): bool
+    {
+        return $amount > 0;
+    }
+
+    private function isPercentageValid(): bool
+    {
+        return $this->percentage > 0 && $this->percentage < 100;
     }
 }
