@@ -1,6 +1,7 @@
 {
   "name": "thetestcoder/gst-calculator",
   "description": "this is simple gst calculator",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "Thetestcoder\\": "src/"
