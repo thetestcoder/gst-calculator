@@ -18,6 +18,10 @@
       "email": "thetestcoder@gmail.com"
     }
   ],
+  "scripts": {
+    "pf": "./vendor/bin/phpunit --filter ",
+    "test": "./vendor/bin/phpunit"
+  },
   "require-dev": {
     "phpunit/phpunit": "^10.2"
   }
